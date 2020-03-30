@@ -8,15 +8,27 @@ public class P1_Count_Real_Numbers {
 
         int[] inputNumber = Arrays.stream(scanner.nextLine().split("\\s+")).mapToInt(Integer::parseInt).toArray();
 
-        Map<Integer, Integer> counter = new TreeMap<>();
+        Map<Integer, Integer> counterRealNumberMap = new TreeMap<>();
 
-        int counter2 = 1;
-        for (int i = 0; i < counter.size(); i++) {
-            int currentElement = inputNumber[i];
-            int tet = 10;
-            counter.put(currentElement, tet);
+        int startNUmber = 1;
+        for (int i = 0; i < inputNumber.length; i++) {
+            int currnetNUmber = inputNumber[i];
+
+            if (!counterRealNumberMap.containsKey(currnetNUmber)) {
+                counterRealNumberMap.put(currnetNUmber, startNUmber);
+            } else {
+                int currentValue = counterRealNumberMap.get(currnetNUmber);
+                currentValue++;
+                counterRealNumberMap.put(currnetNUmber, currentValue);
+            }
         }
 
-        System.out.println();
+        for (Map.Entry<Integer, Integer> element: counterRealNumberMap.entrySet()) {
+            int key = element.getKey();
+            int value = element.getValue();
+
+            System.out.printf("%d -> %d" ,key ,value);
+            System.out.println();
+        }
     }
 }
