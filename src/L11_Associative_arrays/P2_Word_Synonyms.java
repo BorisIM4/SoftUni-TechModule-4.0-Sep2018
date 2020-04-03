@@ -1,9 +1,6 @@
 package L11_Associative_arrays;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class P2_Word_Synonyms {
     public static void main(String[] args) {
@@ -20,7 +17,7 @@ public class P2_Word_Synonyms {
         }
 
         //Пълня Речника с думите от масива. Четните думи са ключ, а нечетните са стойност
-        LinkedHashMap<String, ArrayList<String>> synonymsMap = new LinkedHashMap<>();
+        Map<String, List<String>> synonymsMap = new LinkedHashMap<>();
 
         for (int i = 0; i < numberOfKeyWords; i++) {
             int currentPair = i * 2;
@@ -33,7 +30,7 @@ public class P2_Word_Synonyms {
                 currentWord.add(wordValue);
                 synonymsMap.put(wordKey, currentWord);
             } else {
-                ArrayList<String> currentValues = synonymsMap.get(wordKey);
+                List<String> currentValues = synonymsMap.get(wordKey);
                 currentValues.add(wordValue);
                 synonymsMap.put(wordKey,currentValues);
             }
@@ -41,8 +38,12 @@ public class P2_Word_Synonyms {
         }
 
         //Принтираме на екрана
+        String pattern = "%s - %s";
+        for(Map.Entry<String, List<String>> kvp : synonymsMap.entrySet()){
+            String key = kvp.getKey();
+            String value = String.join(", ", kvp.getValue());
 
-
-
+            System.out.println(String.format(pattern, key, value));
+        }
     }
 }
