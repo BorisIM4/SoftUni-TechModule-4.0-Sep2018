@@ -1,10 +1,11 @@
-package L11_Associative_arrays;
+package L11_Associative_arrays_exercise;
 
 import java.util.Scanner;
 
-public class P6_Lambda_Functions_My_Test {
+public class P3_Legendary_Farming {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
 
     }
 }
