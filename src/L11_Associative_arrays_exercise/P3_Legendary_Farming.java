@@ -49,6 +49,13 @@ public class P3_Legendary_Farming {
             }
         }
 
+        //.sorted((a, b) -> {
+        //      if(a.getValue() - b.getValue() == 0) {
+        //          return a.getKey().compareTo(b.getKey());
+        //      } else {
+        //          return a.getValue() - b.getValue()
+        //      }
+        // })
         importantPieces.entrySet()
                 .stream()
                 .sorted(Map.Entry.<String, Integer>comparingByValue()
