@@ -11,10 +11,15 @@ public class P6_Replace_Repeating_Chars {
         String text = reader.readLine();
 
         StringBuilder finalWord = new StringBuilder();
-        for (int i = 0; i < text.length() - 1; i++) {
-            char currentCharOne = text.charAt(i);
-            char currentCharTwo = text.charAt(i + 1);
+
+        while (true){
+            String currentText = "";
+            currentText = text;
+            for (int i = 0; i < currentText.length(); i++) {
+
+             }
 
         }
+
     }
 }
